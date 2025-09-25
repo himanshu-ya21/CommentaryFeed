@@ -1,79 +1,112 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# MatchFeed - Real-Time Cricket Commentary App
 
-# Getting Started
+A React Native application that displays a dynamic, real-time cricket match commentary feed. The app simulates live cricket events and aggregates match statistics from the event stream.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## 🎯 Objective
 
-## Step 1: Start the Metro Server
+Build a single-screen component that displays a dynamic feed of events for a live T20 cricket match, creating an engaging user experience by reacting differently to various types of match events.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## ✨ Features
 
-To start Metro, run the following command from the _root_ of your React Native project:
+- **Real-Time Commentary**: Simulated live events every 4 seconds with random selection from mock data
+- **Dynamic Aggregation**: Score, wickets, overs, and batsman details calculated from event stream
+- **Visual Differentiation**: Different styling for BALL, BOUNDARY, WICKET, and MATCH_STATUS events
+- **Responsive UI**: Clean, modern interface with team flags and live indicators
+- **Resilient Design**: Handles unknown event types gracefully without crashing
+- **Modular Architecture**: Organized components and utilities for maintainability
 
-```bash
-# using npm
-npm start
+## 🚀 Getting Started
 
-# OR using Yarn
-yarn start
+### Prerequisites
+
+- Node.js (v18 or later)
+- React Native development environment
+- Android Studio (for Android) or Xcode (for iOS)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd MatchFeed
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. For iOS, install pods:
+   ```bash
+   cd ios && pod install && cd ..
+   ```
+
+### Running the App
+
+1. Start the Metro server:
+   ```bash
+   npm start
+   ```
+
+2. Run on Android:
+   ```bash
+   npm run android
+   ```
+
+3. Run on iOS:
+   ```bash
+   npm run ios
+   ```
+
+## 📱 App Structure
+
+```
+src/
+├── components/
+│   ├── MatchHeader.js      # Header with match info and stats
+│   ├── EventItem.js        # Individual commentary event display
+│   └── CommentaryFeed.js   # FlatList for event feed
+├── utils/
+│   ├── mockData.js         # Mock event data
+│   ├── eventProcessor.js   # Event aggregation logic
+│   ├── themes.js           # Color scheme and styling constants
+│   └── constants.js        # Static text constants
+└── App.js                  # Main app component
 ```
 
-## Step 2: Start your Application
+## 🎮 Event Types
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+The app handles the following event types with appropriate visual representation:
 
-### For Android
+- **BALL**: Standard delivery with runs and commentary
+- **BOUNDARY**: Four or six runs with highlighted styling
+- **WICKET**: Wicket fall with dismissal details
+- **MATCH_STATUS**: Match updates like innings breaks
 
-```bash
-# using npm
-npm run android
+## 🛠️ Technologies Used
 
-# OR using Yarn
-yarn android
-```
+- **React Native**: Cross-platform mobile development
+- **React Hooks**: State management and side effects
+- **React Native Vector Icons**: Icon library (Ionicons)
+- **JavaScript ES6+**: Modern JavaScript features
 
-### For iOS
+## 📋 Key Requirements Met
 
-```bash
-# using npm
-npm run ios
+✅ Single-screen dynamic feed  
+✅ Real-time simulated event stream  
+✅ Intelligent UI interpretation of event types  
+✅ Aggregated match statistics from events  
+✅ Visual emphasis for different event types  
+✅ Resilient handling of unknown events  
 
-# OR using Yarn
-yarn ios
-```
+## 🤝 Contributing
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+## 📄 License
 
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This project is licensed under the MIT License.
